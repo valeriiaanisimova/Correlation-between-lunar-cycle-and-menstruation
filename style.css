@@ -1,0 +1,1032 @@
+/* ===== Общие стили для контролов ===== */
+.controls {
+    background: #443966;
+    border-radius: 1rem;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(110, 100, 136, 0.219);
+} 
+   
+
+.controls h3 {
+    color: #F3F0FF;
+    margin: 0 0 25px 0;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.date-input {
+    padding: 7px 20px;
+    font-size: 1em;
+    border-radius: 12px;
+    border: none;
+    background: #443966;
+    color: #F3F0FF;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.date-input-container {
+    position: relative;
+    margin: 30px auto;
+    width: fit-content;
+}
+
+.date-input:focus {
+    outline: none;
+    border-color: #F3F0FF;
+    box-shadow: 0 0 0 3px rgba(176, 153, 206, 0.3);
+}
+
+.date-input:hover {
+    border-color: #F3F0FF;
+    box-shadow: 0 4px 15px rgba(0 0 0 / 23%);
+}
+
+.dates {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    gap: 10px;
+}
+
+.date-top-right {
+    color: #362d52;
+}
+
+.emoji {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+.empty-state {
+    text-align: center;
+    color: #F3F0FF;
+    font-style: italic;
+    padding: 20px;
+    opacity: 0.8;
+}
+
+.general-conclusion {
+    background: rgba(172, 153, 206, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 4px solid #1E1B2E;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #F3F0FF;
+}
+
+.main-container {
+    background: #2A2342;
+    margin: 0 2rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.main-content {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 17, 26, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.modal-content {
+    background: #362d52;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 30px rgba(111 100 136 / 30%);
+    position: relative;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal.active .modal-content {
+    animation: slideIn 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modal#analysisModal .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.moon-label {
+    position: absolute;
+}
+
+.moon-label img {
+    -webkit-mask-image: radial-gradient(circle, white 60%, transparent 61%);
+    mask-image: radial-gradient(circle, white 60%, transparent 61%);
+}
+
+.moon-news-section {
+    width: 400px;
+    margin-top: -20px;
+}
+
+.moon-phase {
+    font-style: italic;
+    text-align: center;
+    color: #F3F0FF;
+    font-size: 1.1em;
+    background: #443966;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.participant-info {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(167, 153, 206, 0.1);
+    border-radius: 5px;
+    border-left: 4px solid #1E1B2E;
+}
+
+.section {
+    margin-bottom: 30px;
+    background: #443966;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.section-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom:  2px solid #F3F0FF;
+    color: #F3F0FF;
+    display: flex;
+    justify-content: center
+}
+
+.section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(128, 114, 153, 0.205)
+}
+
+.star {
+    position: absolute;
+    background: #F3F0FF;
+    border-radius: 50%;
+    animation: twinkle var(--duration) ease-in-out infinite;
+}
+
+.stars {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.switch-btn {
+    background: #1E1B2E;
+    color: #F3F0FF;
+    border: none;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.switch-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(104, 84, 129, 0.3);
+    background: #2A2342;
+}
+
+.switch-btn.active {
+    background: #beb1f1;
+    color: #251e31;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, -8px);
+    background: rgba(110, 100, 136, 0.95);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(110, 100, 136, 0.95) transparent transparent transparent;
+}
+
+/* Анимации остаются без изменений */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInList {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(20px, 20px) rotate(180deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+@keyframes rays {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.4;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Стили скроллбара */
+#analysisContent::-webkit-scrollbar {
+    width: 8px;
+}
+
+#analysisContent::-webkit-scrollbar-thumb {
+    background: #F3F0FF;
+    border-radius: 4px;
+}
+
+#analysisContent::-webkit-scrollbar-track {
+    background: rgba(172, 153, 206, 0.1);
+    border-radius: 4px;
+}
+
+/* Чекбоксы */
+#checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+#checkboxes .checkbox-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #1E1B2E;
+    border: 2px solid #6e6488;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+#checkboxes .checkbox-custom:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #F3F0FF;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+#checkboxes input:checked~.checkbox-custom {
+    background-color: #F3F0FF;
+    border-color: #F3F0FF;
+}
+
+#checkboxes input:checked~.checkbox-custom:after {
+    display: block;
+}
+
+#checkboxes input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+#checkboxes label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+#checkboxes label:hover .checkbox-custom {
+    border-color: #F3F0FF;
+    transform: scale(1.05);
+}
+
+#conclusion {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#menstruation-list .section-title::before {
+    background: #F3F0FF;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+}
+
+#ovulation-list .section-title::before {
+    background: #F3F0FF;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #1E1B2E;
+    color: #F3F0FF;
+    min-height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background: #6c5d9d;
+    color: #F3F0FF;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #927ed4;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+h1 {
+    font-size: 2.4em;
+    text-align: center;
+    color: #F3F0FF;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(171 153 206 / 30%);
+    font-weight: bold;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(circle, rgba(120, 99, 156, 0.288) 10%, transparent 70%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: rays 6s linear infinite;
+}
+
+li {
+    position: relative;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 1.05em;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInList 0.6s ease-out forwards;
+    z-index: 1;
+    color: #F3F0FF;
+    background: #514478;
+}
+
+li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(151, 133, 182, 0.781);
+    z-index: 10;
+}
+
+li:hover .tooltip {
+    opacity: 1;
+}
+
+li:nth-child(even) {
+    animation-delay: 0.15s;
+}
+
+li:nth-child(odd) {
+    animation-delay: 0.3s;
+}
+
+span {
+    color: #F3F0FF;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+ul {
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    position: relative;
+    overflow: visible;
+    justify-content: center
+}
+/* Стили для кнопки закрытия */
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: rgba(0 0 0 / 23%);
+}
+
+.close-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Стили для кнопки развертывания/свертывания */
+.expand-btn {
+    position: absolute;
+    top: 15px;
+    right: 60px;
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.expand-btn:hover {
+    background: rgba(0 0 0 / 23%);
+}
+
+.expand-btn svg {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+}
+
+.collapse-icon {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+.modal-content.expanded .expand-icon {
+    opacity: 0;
+}
+
+.modal-content.expanded .collapse-icon {
+    opacity: 1;
+    display: block;
+}
+/* Стили для расширенного состояния */
+.modal-content.expanded {
+    width: 95vw !important;
+    height: 95vh !important;
+    max-width: none !important;
+}
+
+.conclusion {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+:root {
+    --space-dark: #15111a;
+    --neon-purple: #F3F0FF;
+    --stardust: #F3F0FF;
+    --deep-space: #251e31;
+    --nebula: #726488;
+}
+
+
+
+.charts-section {
+    flex: 1 1 800px;
+    min-width: 0;
+}
+
+@media (max-width: 1200px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .moon-news-section {
+        flex: 1 1 auto;
+    }
+}
+
+.chart-switcher {
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.charts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.chart-wrapper {
+    background: #362d52;
+    box-shadow: 0 0 15px rgba(0 0 0 / 23%);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    height: 685px;
+}
+
+.chart-wrapper.correlation {
+    flex: 1 1 100%;
+}
+
+.chart-container {
+    position: relative;
+    height: 460px;
+    width: 100%;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: rgba(49, 30, 30, 0.9);
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(117, 100, 136, 0.2);
+    position: relative;
+    overflow: visible;
+    backdrop-filter: blur(5px);
+    border: 1px solid #726488;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.conclusion ul,
+.conclusion ol {
+    padding-left: 0;
+    list-style-position: inside;
+    padding-left: 24px;
+    margin: 10px 0;
+}
+
+.conclusion h3,
+.conclusion h4,
+.conclusion h5 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== Кастомные чекбоксы с анимацией ===== */
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 15px 0;
+    justify-content: space-evenly;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Стиль для кружочка */
+.color-marker {
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #F3F0FF; /* Яркий бортик */
+    background-color: rgba(0 0 0 / 23%); /* Бледный фон */
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    will-change: transform, background-color; /* Оптимизация анимации */
+    backface-visibility: hidden; /* Убирает мерцание в некоторых браузерах */
+}
+
+.color-marker {
+    transition: 
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .checkbox-label {
+        min-width: 100px;
+        margin-right: 10px;
+    }
+}
+
+/* Состояние при наведении */
+.checkbox-label:hover .color-marker {
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(206, 153, 155, 0.5);
+}
+
+/* Выбранное состояние */
+.checkbox-label input:checked ~ .color-marker {
+    transform: scale(1.15);
+    box-shadow: 0 0 8px rgba(173, 153, 206, 0.7);
+}
+
+/* Имя участника */
+.participant-name {
+    font-size: 0.95em;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Изменение имени при выборе */
+.checkbox-label input:checked ~ .participant-name {
+    text-shadow: 0 0 3px rgba(173, 153, 206, 0.3);
+}
+
+/* Основной блок вывода */
+.conclusion {
+    display: none;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 0.95em;
+    line-height: 1.6;
+    overflow-y: auto;
+}
+
+.conclusion::-webkit-scrollbar {
+    width: 6px;
+}
+
+.conclusion::-webkit-scrollbar-track {
+    background: rgba(173, 153, 206, 0.1);
+}
+
+.conclusion::-webkit-scrollbar-thumb {
+    background: #F3F0FF;
+    border-radius: 3px;
+}
+
+/* Заголовки */
+.conclusion h3 {
+    color: #F3F0FF;
+    margin: 20px 0 12px 0;
+    padding-bottom: 6px;
+    border-bottom: 2px solid rgba(178, 153, 206, 0.3);
+    font-size: 1.2em;
+}
+
+.color-marker {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+}
+
+.conclusion h4,
+.conclusion h5 {
+    color: #F3F0FF;
+    margin: 16px 0 8px 0;
+    font-size: 1.1em;
+}
+
+.conclusion li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+    padding-left: 6px;
+}
+
+/* Специальные блоки */
+.conclusion .general-conclusion {
+    background: rgba(172, 153, 206, 0.1);
+    padding: 16px;
+    border-radius: 12px;
+    margin: 15px 0;
+    border-left: 4px solid #F3F0FF;
+}
+
+.conclusion .participant-info {
+    background: rgba(178, 153, 206, 0.1);
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border-left: 3px solid #6e6488;
+    transition: all 0.2s ease;
+}
+
+/* Выделенные элементы */
+.conclusion .highlight {
+    color: #F3F0FF;
+    font-weight: 600;
+    background-color: rgba(172, 153, 206, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Статистическая значимость */
+.conclusion .significant {
+    color: #F3F0FF;
+    font-weight: 600;
+    background: rgba(117, 100, 136, 0.2);
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+/* Сноска */
+.conclusion .disclaimer {
+    font-size: 0.85em;
+    color: #F3F0FF;
+    margin-top: 15px;
+    font-style: italic;
+    border-top: 1px dashed rgba(173, 153, 206, 0.3);
+    padding-top: 10px;
+}
+
+/* Эмодзи */
+.conclusion .emoji {
+    font-size: 1.1em;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .charts-container {
+        flex-direction: column;
+    }
+
+    .chart-wrapper {
+        background: #362d52;
+        box-shadow: 0 0 15px rgba(0 0 0 / 23%);
+        flex: 1 1 100%;
+    }
+
+    .checkbox-group {
+        flex-direction: column;
+    }
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    margin-right: 15px;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.checkbox-group input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #1E1B2E;
+    border: 2px solid #756488;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.checkbox-group label:hover .checkbox-custom {
+    border-color: #F3F0FF;
+    transform: scale(1.05);
+}
+
+.checkbox-group input:checked~.checkbox-custom {
+    background-color: #F3F0FF;
+    border-color: #F3F0FF;
+}
+
+.checkbox-custom:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #F3F0FF;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-group input:checked~.checkbox-custom:after {
+    display: block;
+}
+
+
+/* ===== Стили кнопок ===== */
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.button-group button {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #F3F0FF;
+    box-shadow: 0 2px 8px rgba(100, 84, 129, 0.2);
+}
+
+.button-group button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(100, 84, 129, 0.3);
+}
+
+.button-group button:active {
+    transform: translateY(0);
+}
+
+/* ===== Адаптация ===== */
+@media (max-width: 768px) {
+    .checkbox-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+}

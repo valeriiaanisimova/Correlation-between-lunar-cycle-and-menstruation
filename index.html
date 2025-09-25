@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализ менструальных циклов</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suncalc@1.9.0/suncalc.min.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <button class="switch-btn" onclick="openMoonModal()" style="display: block; background: #443966;"></button>
+
+        <h1>Анализ менструальных циклов</h1>
+
+        <div class="chart-switcher">
+            <button class="switch-btn active" id="show-cycle-chart">График циклов</button>
+            <button class="switch-btn" id="show-correlation-chart">Анализ корреляции</button>
+        </div>
+
+        <div class="dates">
+            <span>Выберите дату:</span>
+            <input type="date" class="date-input" id="main-date">
+        </div>
+        
+        <div class="main-content">
+            <div class="charts-section">
+                <div class="chart-wrapper" id="cycle-chart-wrapper">
+                    <div class="controls">
+                        <h3>Выберите участниц для анализа:</h3>
+                        <div class="checkbox-group" id="checkboxes"></div>
+                        <div class="button-group">
+                            <button onclick="selectAllCycle()">Выбрать всех</button>
+                            <button onclick="deselectAllCycle()">Снять выбор</button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="cycle-chart"></canvas>
+                        <div id="overlay"></div>
+                    </div>
+                </div>
+
+                <div class="chart-wrapper correlation" id="correlation-chart-wrapper" style="display: none;">
+                    <div class="controls">
+                        <h3>Выберите участниц для анализа:</h3>
+                        <div class="checkbox-group" id="participants-checkbox"></div>
+                        <button id="select-all">Выбрать всех</button>
+                        <button id="deselect-all">Снять выбор</button>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="correlation-chart"></canvas>
+                    </div>
+                    <div class="button-group" style="justify-content: center">
+                        <button onclick="openAnalysisModal()" class="switch-btn"> Показать подробный анализ</button>
+                    </div>
+                </div>
+
+
+
+                <div class="modal" id="moonModal">
+                    <div class="modal-content">
+                        <button class="close-btn" onclick="closeMoonModal()">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18M6 6L18 18" stroke="#F3F0FF" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="date-top-right" id="today-date"></div>
+                        <h1 style="color: #F3F0FF;">🌜 Лунные новости</h1>
+    
+                        <div class="date-input-container">
+                            <input type="date" class="date-input" id="modal-date">
+                        </div>
+    
+
+                        <div class="section">
+                            <div class="section-title">Менструация</div>
+                            <ul id="menstruation-list"></ul>
+                            <div class="empty-state" id="menstruation-empty">Ни у кого нет менструации в этот день</div>
+                        </div>
+
+                        <div class="section">
+                            <div class="section-title">Овуляция</div>
+                            <ul id="ovulation-list"></ul>
+                            <div class="empty-state" id="ovulation-empty">Ни у кого нет овуляции в этот день</div>
+                        </div>
+
+                        <div class="moon-phase" id="moon-phase">
+                            <div>Фаза луны: <span id="moon-phase-text">...</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal" id="analysisModal">
+                <div class="modal-content" style="max-width: 800px; height: 80vh; display: flex; flex-direction: column;">
+                    <button class="close-btn" onclick="closeAnalysisModal()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="#F3F0FF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button id="toggleExpandBtn" class="expand-btn">
+                        <!-- Иконка для развертывания -->
+                        <svg class="expand-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path xmlns="http://www.w3.org/2000/svg" d="M14 10L21 3M21 3H15M21 3V9M10 14L3 21M3 21H9M3 21L3 15" stroke="#F3F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <!-- Иконка для сворачивания -->
+                        <svg class="collapse-icon" width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path xmlns="http://www.w3.org/2000/svg" d="M19.1429 10H14M14 10V4.85714M14 10L20 4" stroke="#F3F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path xmlns="http://www.w3.org/2000/svg" d="M4.99996 14H9.99996M9.99996 14V19M9.99996 14L4 20" stroke="#F3F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </button>
+                    <h2 style="color: #F3F0FF; margin-bottom: 20px;">Детальный анализ синхронизации</h2>
+                    <div class="conclusion" id="conclusion"></div>
+                </div>
+            </div>
+
+</body>
+
+</html>

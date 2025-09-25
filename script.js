@@ -2,13 +2,13 @@
 const participantsData = [
   { name: 'Маша', lastPeriod: '2024-03-30', duration: 4, cycle: 29, color: "#FFB6C1" },
   { name: 'Диана', lastPeriod: '2024-04-14', duration: 4, cycle: 28, color: "#98FB98" },
-  { name: 'Жания', lastPeriod: '2024-04-03', duration: 4, cycle: 26, color: "#FFD700" },
+  { name: 'Ирина', lastPeriod: '2024-04-03', duration: 4, cycle: 26, color: "#FFD700" },
   { name: 'Даша', lastPeriod: '2024-04-10', duration: 5, cycle: 26, color: "#ADD8E6" },
   { name: 'Соня', lastPeriod: '2024-03-29', duration: 5, cycle: 25, color: "#FFA07A" },
   { name: 'Саша', lastPeriod: '2024-05-03', duration: 4, cycle: 33, color: "#E6E6FA" },
-  { name: 'Лерия', lastPeriod: '2024-03-29', duration: 5, cycle: 26, color: "#AFEEEE" },
+  { name: 'Лиса', lastPeriod: '2024-03-29', duration: 5, cycle: 26, color: "#AFEEEE" },
   { name: 'Лера', lastPeriod: '2024-04-01', duration: 4, cycle: 28, color: "#D8BFD8" },
-  { name: 'Лима', lastPeriod: '2024-02-23', duration: 6, cycle: 28, color: "#FFFACD" }
+  { name: 'Алина', lastPeriod: '2024-02-23', duration: 6, cycle: 28, color: "#FFFACD" }
 ];
 
 // ========== СИНХРОНИЗАЦИЯ ДАТ ==========
@@ -913,4 +913,5 @@ function deselectAllCycle() {
     }
   });
   drawCycleChart(centerDateInput.value);
+
 }
